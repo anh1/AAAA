@@ -1,6 +1,108 @@
-SbtnApp::Application.routes.draw do
+Version::Application.routes.draw do
+ 
+
+  resources :netzkenaics
+
+  resources :netzkecls
+
+  resources :tcomsjps
+
+  resources :tcomsfedbizs
+
+  resources :tcomfedbizs
+
+  resources :tcoms
+
+  resources :states
+
+  resources :setas
+
+  resources :ccls
+
+  netzke
+
+  get "welcome/index"
+
+  resources :teams
+
+  resources :teamings
+  resources :mylists
+  
+resources :tasks
+  resources :fedbizs
+  resources :tcs
+  #get "sessions/new"
+
+  #get "sessions/create"
+
+  #get "sessions/destroy"
+  
+  resource :session
+
+  resources :jps
+
+  resources :jvrs
+  resources :cinfos
+  resources :userpages
+
+  resources :blog_posts do resources :comments end
+
+   resources :ccls
+   resources :comstates
+   resources :comments
+  
+  resources :naics
+  resource :session 
+  resources :topics
+  resources :users, :sent
+  resources :posts
+  resources :forums
+  resources :homes
+  resources :companies
+
+  
+
+resources  :mailbox do
+   collection do 
+        get :trash  
+	get :mailList
+	end
+	
+end
+	
+	
+resources :messages do
+   member do 
+        get :reply
+        get :forward
+        get :reply_all
+        put :undelete
+        get :mailList	
+    end
+	
+end
+
+resources :forums do
+   member do
+        get :fsearch      	
+    end
+	
+end
+
+
+
+   match 'login' => 'user_sessions#new', :as => :login
+   match 'logout' => 'user_sessions#destroy', :as=> :logout
+   match 'inbox' =>'mailbox#index', :as=> :mailInbox  
+   match 'mailList'=>'mailbox#mailList',:as=> :mailList
+  # match 'company'=>'companies#new',:as=> :company
+  
+   
+    
   # The priority is based upon order of creation:
-  # first created -> highest priority.
+  # first created -> highest priority.  
+
+  #
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -19,6 +121,9 @@ SbtnApp::Application.routes.draw do
   #       get 'short'
   #       post 'toggle'
   #     end
+
+  
+  
   #
   #     collection do
   #       get 'sold'
@@ -48,8 +153,12 @@ SbtnApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  #root :to =>
+   
+  root :to => "homes#index" 
+  
 
+  #root :to => "welcome#index"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
