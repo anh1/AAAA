@@ -1,31 +1,22 @@
+require 'rubygems'
+
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'rails', '3.0.1'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+gem 'mysql'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+gem "will_paginate", "~> 3.0.pre2"
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+gem 'thinking-sphinx', '2.0.0.rc2', :require => 'thinking_sphinx'
+#gem 'netzke-core', :git => "git://github.com/dmytro/netzke-core.git", :branch => '0-6'
+#gem 'netzke-basepack', :git => "git://github.com/skozlov/netzke-basepack.git", :branch => '0-6'
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+
+#gem 'netzke-core', :path => "netzke-core", :branch => '0-6'
+#gem 'netzke-basepack', :path => "netzke-basepack", :branch => '0-6'
+
+
