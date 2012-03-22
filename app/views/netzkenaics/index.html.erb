@@ -1,0 +1,21 @@
+<h1>Listing netzkenaics</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @netzkenaics.each do |netzkenaic| %>
+  <tr>
+    <td><%= link_to 'Show', netzkenaic %></td>
+    <td><%= link_to 'Edit', edit_netzkenaic_path(netzkenaic) %></td>
+    <td><%= link_to 'Destroy', netzkenaic, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Netzkenaic', new_netzkenaic_path %>

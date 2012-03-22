@@ -1,0 +1,20 @@
+<%= simple_form_for(@tcom) do |f| %>
+  <% if @tcom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tcom.errors.count, "error") %> prohibited this tcom from being saved:</h2>
+
+      <ul>
+      <% @tcom.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="inputs">
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

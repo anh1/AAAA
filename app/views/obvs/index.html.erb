@@ -1,0 +1,21 @@
+<h1>Listing obvs</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @obvs.each do |obv| %>
+  <tr>
+    <td><%= link_to 'Show', obv %></td>
+    <td><%= link_to 'Edit', edit_obv_path(obv) %></td>
+    <td><%= link_to 'Destroy', obv, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Obv', new_obv_path %>

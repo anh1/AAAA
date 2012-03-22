@@ -1,0 +1,85 @@
+
+<body>
+
+<% unless @results.empty? %>
+  
+ <font size = 2>
+  
+  <table border= 0px 0px 0px 1px width = "1150" ALIGN="center" style="border-collapse:collapse" cellpadding="6" >
+
+<tr bgcolor="DEE9AE">
+
+<th class="subject" ALIGN=LEFT>Topics and Replies containing "<%= params[:search] %>" </th> 
+ <th class="Author" ALIGN=MIDDLE>ID</th>
+<th class="Author" ALIGN=MIDDLE>Author</th>
+ <th class="lastpost" ALIGN=MIDDLE>Date</th>
+
+
+
+
+
+</tr>
+
+  <% @results.each do |result| %>
+    
+    
+    <tr >  
+          
+         <% if result.class == Post %>
+        
+	 <td width=750>    
+
+	<b> RE: <%= result.topic.name %></b>	 
+	
+	 </td>
+	 
+	 <% end %>
+	 
+	 <% if result.class == Topic %>
+	 
+	    
+	  <td width=650>
+	  
+ 	   
+	 <b> Subject: <%= result.name %></b>         
+         
+	  
+	  
+	  </td> 
+
+         <% end %>
+	    	
+	
+        <td width=100 Align="center">   </td>
+        
+	<td width=150 Align="center"><b><%=  result.user.login %></b></td>
+      
+      <td width=150 Align="center"><b><%=  result.created_at %></b></td>
+      
+      
+      
+    </tr> 
+ 
+     
+    
+     <tr > 
+     
+            
+	      
+	     <td colspan="4"> <%=  result.content %> </td>
+	      
+	      
+    </tr>
+	      
+    
+  <% end %>
+  </table>
+
+
+</font>
+ 
+<% end %>
+
+</body>
+
+

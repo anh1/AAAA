@@ -1,0 +1,21 @@
+<h1>Listing naics</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @naics.each do |naic| %>
+  <tr>
+    <td><%= link_to 'Show', naic %></td>
+    <td><%= link_to 'Edit', edit_naic_path(naic) %></td>
+    <td><%= link_to 'Destroy', naic, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Naic', new_naic_path %>

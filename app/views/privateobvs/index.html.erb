@@ -1,0 +1,21 @@
+<h1>Listing privateobvs</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @privateobvs.each do |privateobv| %>
+  <tr>
+    <td><%= link_to 'Show', privateobv %></td>
+    <td><%= link_to 'Edit', edit_privateobv_path(privateobv) %></td>
+    <td><%= link_to 'Destroy', privateobv, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Privateobv', new_privateobv_path %>

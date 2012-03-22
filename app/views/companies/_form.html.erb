@@ -1,0 +1,226 @@
+<%= form_for(@company) do |f| %>
+
+<table cellpadding="5" bgcolor=#E6E6E6>
+<tr>
+
+
+<td>
+<div class="field">
+    <%= f.label :"First Name" %><br />
+    <%= f.text_field :fname %>
+  </div>
+</td>
+<td>
+ <div class="field">
+    <%= f.label :"Last Name"%><br />
+    <%= f.text_field :lname %>
+  </div> 
+  </td>
+  </tr>
+  
+  
+  <tr>
+<td>
+  <div class="field">
+    <%= f.label :"Email"%><br />
+    <%= f.text_field :cemail %>
+  </div>
+</td>
+<td>
+ <div class="field">
+    <%= f.label :"Password"%><br />
+    <%= f.text_field :upassword %>
+    </div>
+      </td>  
+  <td>
+<div class="field">
+    <%= f.label :"Re-Type Password" %><br />
+    <%= f.text_field :upassword%>
+  </div>
+</td> 
+  
+  </tr>    
+
+
+
+<tr>
+<td>
+<div class="field">
+    <%= f.label :"Company Name" %><br />
+    <%= f.text_field :cname%>
+  </div>
+</td>
+<td>
+ <div class="field">
+    <%= f.label :"Phone"%><br />
+    <%= f.text_field :cphone %>
+    </div>
+      </td>
+</tr>
+
+<tr>
+<td>
+<div class="field">
+    <%= f.label :"Address:"%><br />
+     <%= f.text_area :caddress , :rows=>"2" , :cols=>"30"%>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :"State"%><br />
+    <%= collection_select(:company, :cstate, @comstate, :id,:cstate) %>
+  </div>
+  
+  <br/>
+  
+<div class="field">
+    <%= f.label :"Zip Code" %><br />
+    <%= f.text_field :czip%>
+  </div>
+
+
+</td>
+<td COLSPAN2="3">
+   <div class="field">
+   <p>
+    <%= "Set-Aside Interest(s):" %> <br/><br/>
+   <%= check_box_tag 'btypes_ids[]', 1%>
+   <%= "Small Business" =%> &nbsp
+       <%= check_box_tag 'btypes_ids[]', 2%>
+	<%= "Competitive 8A" %> <br/> <br/>
+      <%= check_box_tag 'btypes_ids[]', 3%>
+      <%= "Women-Owned" %> &nbsp 
+     <%= check_box_tag 'btypes_ids[]', 4%>
+     <%= "HUB Zone" %> <br/><br/>
+        <%= check_box_tag 'btypes_ids[]', 5%>
+     <%= "Veteran-Owned" %> &nbsp
+       <%= check_box_tag 'btypes_ids[]', 6%>
+     <%= "HBCU" %>  
+  </div>  
+  </td>
+</tr>
+
+
+
+<tr>
+<td>
+ <div class="field">
+    <%= f.label :"Number of Employee(s)"%><br />
+    <%= f.text_field :cnoe %>
+  </div>
+</td>
+<td>
+ <div class="field">
+    <%= f.label :"Year(s) in Business"%><br />
+    <%= f.text_field :cyrsinbiz %>
+  </div>  
+ 
+ 
+      </td>
+</tr>
+
+
+
+<tr>
+<td>
+  <div class="field">
+    <%= f.label :"Facility Clearance"%><br />
+    <%= f.text_field :cfclear %>
+  </div>
+</td>
+<td>
+<div class="field">
+    <%= f.label :"Contracting Experience"%><br />
+    <%= f.text_field :cexp %>
+  </div> 
+      </td>
+   
+  
+      
+</tr>
+
+  
+</table>
+
+   
+
+<div class="sch">
+
+<div id="naics_container"> 
+<table class="ex2"> 
+       <% (0..101).each do |i| %>       
+	<tr>
+        <td WIDTH="10%"><%= check_box_tag 'naics_ids[]', @ccls[i].ccftcode %></td> 
+	<td WIDTH="20%"><%= @ccls[i].ccftcode %></td>
+        <td WIDTH="70%"COLSPAN=0> <%= @ccls[i].ccft %></td>
+        </tr>	
+    <% end %>
+</table>
+</div> 
+
+ <div class="placeholder">
+ 
+ </div>
+
+
+<div id="naics_container"> 
+<table class="ex2"> 
+       <% (0..1286).each do |i| %>       
+	<tr>
+        <td WIDTH="10%"><%= check_box_tag 'naics_ids[]', @naics[i].ncode %></td> 
+	<td WIDTH="20%"><%= @naics[i].ncode %></td>
+        <td WIDTH="70%"COLSPAN=0> <%= @naics[i].ngroup %></td>
+        </tr>	
+    <% end %>
+</table>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+  <% end %>
+    
+
+
+<div class="sch1">
+<div class="placeholder">
+ 
+ </div>
+<%= form_tag ccls_path, {:method => 'get', :remote=>true} do %>
+    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search] %>  
+    <%= "for Naics Code" %>   
+<% end %>  
+</div>
+
+<div class="sch2">
+<%= form_for ccls_path, {:method => 'get', :remote=>true} do %>
+    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search] %>  
+    <%= "for Naics Code" %>   
+<% end %>  
+</div>

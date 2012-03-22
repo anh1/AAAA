@@ -1,0 +1,21 @@
+<h1>Listing netzkecls</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @netzkecls.each do |netzkecl| %>
+  <tr>
+    <td><%= link_to 'Show', netzkecl %></td>
+    <td><%= link_to 'Edit', edit_netzkecl_path(netzkecl) %></td>
+    <td><%= link_to 'Destroy', netzkecl, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Netzkecl', new_netzkecl_path %>

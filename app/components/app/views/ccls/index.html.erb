@@ -1,0 +1,21 @@
+<h1>Listing ccls</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ccls.each do |ccl| %>
+  <tr>
+    <td><%= link_to 'Show', ccl %></td>
+    <td><%= link_to 'Edit', edit_ccl_path(ccl) %></td>
+    <td><%= link_to 'Destroy', ccl, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ccl', new_ccl_path %>

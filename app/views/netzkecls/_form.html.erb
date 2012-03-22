@@ -1,0 +1,20 @@
+<%= simple_form_for(@netzkecl) do |f| %>
+  <% if @netzkecl.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@netzkecl.errors.count, "error") %> prohibited this netzkecl from being saved:</h2>
+
+      <ul>
+      <% @netzkecl.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="inputs">
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

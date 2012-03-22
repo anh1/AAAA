@@ -1,0 +1,21 @@
+<h1>Listing tcoms</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tcoms.each do |tcom| %>
+  <tr>
+    <td><%= link_to 'Show', tcom %></td>
+    <td><%= link_to 'Edit', edit_tcom_path(tcom) %></td>
+    <td><%= link_to 'Destroy', tcom, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tcom', new_tcom_path %>

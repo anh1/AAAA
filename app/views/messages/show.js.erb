@@ -1,0 +1,5 @@
+<%= javascript_tag do %>
+  $("#message").bind("ajax:complete", function(et, e){
+    $("#message").html("This works"); // insert content
+  });
+<% end %>

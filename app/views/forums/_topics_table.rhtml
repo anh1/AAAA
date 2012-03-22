@@ -1,0 +1,39 @@
+<table class="ftable" align="center">
+
+<tr>
+
+<th>Subject</th>
+<th>Posted by</th>
+<th>Replies</th>
+<th>Last Post</th>
+
+</tr>
+
+<% for topic in @forum.topics %>
+
+<tr class= "<%= cycle(:even, :odd) %> ">
+
+<td><%= link_to h(topic.name), topic_path(topic.id)%></font></td>
+
+<%g=topic.user_id %> 
+
+<td><%= User.find(g).login %></font></td>
+
+<td><%=topic.posts.count %></font></td>
+
+<td><% if topic.most_recent_post %>
+
+<%= distance_of_time_in_words_to_now topic.most_recent_post.updated_at %> ago by <%= topic.most_recent_post.user.login %>
+
+<% else %>no posts<%end%></td>
+
+
+</tr>
+
+<% end %>
+
+
+</table>
+
+</body>
+</html>

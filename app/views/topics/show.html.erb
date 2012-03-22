@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Switch menu</title>
+<style type="text/css">
+<!--
+body {
+text-align:left;
+margin:30px;
+}
+
+a {
+color:blue;
+cursor:pointer;
+}
+
+#myvar {
+border:1px solid #ccc;
+background:#F5F5DC;
+padding:20px;
+}
+-->
+</style>
+
+</head>
+
+<body>
+
+<table cellspacing= "10px" width = "1100px" ALIGN="center" >
+
+<tr>
+ <td><font size="2.5" font face="bart">
+
+<div id=myvar>
+
+<br>
+
+<div style="text-indent: .5cm; "><b><%= "Posted by: " %></b><font color="800517"><%= @topic.user.login%> on <%=Time.now%></font color></div>
+
+<br>
+
+<div style="text-indent: .5cm; "><b><%= "Subject: " %></b><%= @topic.name %></div>
+
+<div style="padding: 20px"><%= @topic.content %></div>
+
+<br></br><br></br><br></br><br></br></br>
+
+<div style="text-indent: .5cm; "><%= link_to "Reply", "/posts/new?topic=#{@topic.id}" %></div>
+
+</div></FONT>
+
+
+</td>
+
+</tr>
+
+<% for post in @topic.posts %>
+
+<tr>
+<td><font size="2.5" font face="bart">
+
+<div id=myvar>
+
+<br>
+
+<div style="text-indent: .5cm; "><b><%= "Posted by: " %></b><font color="800517"><%= post.user.login %> on <%=Time.now%></font color></div>
+
+<br>
+
+<div style="text-indent: .5cm; "><b><%= "RE: " %></b><%= @topic.name %></div>
+
+<div style="padding: 25px"><%= post.content %></div>
+
+<br></br><br></br><br></br><br></br></br>
+
+<div style="text-indent: .5cm; "><%= link_to "Reply", "/posts/new?topic=#{@topic.id}" %></div>
+
+</div></FONT>
+
+</td>
+
+</tr>
+
+<% end %>
+
+</table>
+
+</body>
+
+</html>

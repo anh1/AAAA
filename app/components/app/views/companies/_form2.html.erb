@@ -1,0 +1,52 @@
+<%= semantic_form_for(@company) do |f| %>
+
+    <% f.inputs do %>  
+     <%= f.input :fname, :label=>"First Name:" %>
+     <%= f.input :lname, :label=>"Last Name:" %>
+     <%= f.input :uname, :label=>"Username:" %>
+     <%= f.input :lname, :label=>"Password:" %>
+      <%= f.input :lname, :label=>"Re-Type Password:" %>    
+    <%= f.input :cname, :label=>"Company Name:" %>    
+    <%= f.input :caddress, :label=>"Address:", :input_html => { :cols=> 10},:input_html => { :rows=> 3} %>    
+    <%= f.input :cphone, :label=>"Phone:" %>   
+    <%= f.input :cemail, :label=>"Email:" %>  
+    <%= f.input :cwebsite, :label=>"Website" %>
+    <%= f.input :cyrsinbiz, :label=>"Year(s) in Business:" %>   
+    <%= f.input :cexp, :label=>"Contracting Experience:" %> 
+    <%= f.input :cnoe, :label=>"Number of Employee(s):" %>   
+    <%= f.input :cfclear, :label=>"Facility Clearance:" %> 
+   <%end%>
+
+<div id="naics_content" class="autosize">
+      
+<% form_tag naics_path, :method => 'get' do %>
+  <p id="search_naics">
+    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search] %>    
+  </p>
+<% end %>    
+ 
+<div id="naics_container"> 
+<table class="ex2"> 
+       <% (0..1286).each do |i| %>       
+	<tr>
+        <td WIDTH="10%"><%= check_box_tag 'naics_ids[]', @naics[i].ncode %></td> 
+	<td WIDTH="20%"><%= @naics[i].ncode %></td>
+        <td WIDTH="70%"COLSPAN=0> <%= @naics[i].ngroup %></td>
+        </tr>	
+    <% end %>
+</table>
+</div>
+
+
+</div>
+
+  <br/>
+   <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+  <% end %>
+    
+
+
