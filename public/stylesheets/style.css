@@ -1,0 +1,35 @@
+body {
+background-color: #4B7399;
+margin: 32px 32px;
+font-family: Helvetica, Arial, sans-serif;
+}
+#content {
+background-color: #fff;
+border: 10px solid #ccc;
+padding: 20px;
+}
+
+#user_nav {
+	float: left;
+	font-size: 18px;
+	font-weight:600;
+}
+
+hr {size:10px;}
+
+/*style the forum/topic table*/
+
+table.ftable {border:0px 0px 0px 1px; border-collapse:collapse; width:90%;table-layout:fixed;text-align:center;}
+
+table.ftable td {overflow: hidden; text-overflow: ellipsis;white-space: nowrap;font-family:Arial,Helvetica,sans-serif;font-size:14px;}
+
+table.ftable th {background-color: #DEE9AE;}
+
+table.ftable tr.odd { background-color: #F9FFDC; }
+
+
+table.ftable tr.even { background-color: #WHITE	}
+
+
+
+		 

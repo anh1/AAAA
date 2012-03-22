@@ -173,3 +173,13 @@
     });
   });
 })();
+
+function showPreview()
+{
+var s=document.getElementById('comment').value;
+if((s.length>1000)||(s.length<10)){alert("Code length must be within 10 to 1000 characters."); return false;}
+//Add your filter code or validation rule here.
+document.getElementById('preview').innerHTML=s;
+}
+
+
