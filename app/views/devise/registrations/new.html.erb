@@ -1,0 +1,48 @@
+<div id="main">
+
+<h2 class='x-panel-header'>User Information</h2><br>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %><br><br>
+
+<%= f.label "Registration as" %>
+<%= f.radio_button  "role_id", Role.find_by_role_type("Consultant").id, :checked=>true  %> Consultant
+<%= f.radio_button  "role_id", Role.find_by_role_type("Business").id %> Business<br/><br/>
+
+  <div class="field">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  </div><br>
+  <div class="field">
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </div><br>
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div><br>
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.select :state, options_for_select(User.state_all), {:include_blank=>"--select--"} %>
+  </div><br>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div><br>
+	<div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div><br>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div><br><br>
+	<div class="actions">
+    <%= f.submit "Register Now"%>
+    <%=link_to "cancel", root_path%>
+  </div><br>
+<% end %><br><br><br>
+
+<%= render :partial => "devise/shared/links" %>
+</div>
+

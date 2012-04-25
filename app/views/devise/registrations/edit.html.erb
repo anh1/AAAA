@@ -1,0 +1,51 @@
+<div id="main">
+
+<h2 class='x-panel-header'>Edit <%= current_user.firstname %> Information</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname, :rows => 3 %>
+  </div><br>
+  <div class="field">
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </div><br>
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div><br>
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.select :state, options_for_select(User.state_all, :selected=>resource.state) %>
+  </div><br>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div><br>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div><br>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div><br>
+  <div class="field">
+    <%= f.label :current_password %>
+    <%= f.password_field :current_password %>
+ </div><br>
+  <div class="field">
+    <%= f.submit "Update" %>
+    <%=link_to "cancel", root_path%>
+  </div><br>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+
+<%= link_to "Back", :back %>
+</div>

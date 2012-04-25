@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%= @contact.name %>
+</p>
+
+<p>
+  <b>Company name:</b>
+  <%= @contact.company_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <b>Mobile number:</b>
+  <%= @contact.mobile_number %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @contact.subject %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @contact.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>

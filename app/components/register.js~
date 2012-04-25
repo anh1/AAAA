@@ -1,0 +1,19 @@
+	:listeners=>{
+            :change=> function (field, newValue, oldValue){
+                var value = newValue.show;
+                if(value == 'cons'){
+                    var cb1 = Ext.getCmp('user_info');
+                    var cb2 = Ext.getCmp('company_info');
+
+                    cb1.enable();
+                    cb2.disable();
+                }
+                if(value == 'busi'){
+                    var cb1 = Ext.getCmp('user_info');
+                    var cb2 = Ext.getCmp('company_info');
+
+                    cb1.enable();
+                    cb2.enable();
+                }
+            }
+        }
