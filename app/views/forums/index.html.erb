@@ -33,7 +33,7 @@
   
   <td><% if forum.most_recent_post %><%= distance_of_time_in_words_to_now forum.most_recent_post.updated_at %> ago by 
   
-  <%=forum.most_recent_post.user.login %> <% else %>no posts<%end%></td>  
+  <%=forum.most_recent_post.user.username %> <% else %>no posts<%end%></td>  
   
   <td><%=forum.topics.size %></td>        
   

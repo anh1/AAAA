@@ -3,7 +3,7 @@ class Mylists < TeamingGrid
   def configuration
     current_user = User.find(session[:user_id]) 
     super.merge(
-                { itemId: "mylists",  
+                { :itemId=> "mylists",  
                   :name => "mylists",
                   :model => "Mylist",
                   :scope => {:user_id => current_user.id},

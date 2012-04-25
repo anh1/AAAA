@@ -1,5 +1,11 @@
 Version::Application.routes.draw do
- 
+  get "admin/index"
+
+  resources :contacts
+
+   root :to => "homes#index"
+
+  devise_for :users
 
   resources :netzkenaics
 
@@ -19,6 +25,7 @@ Version::Application.routes.draw do
 
   resources :ccls
 
+  resources :users
   netzke
 
   get "welcome/index"
@@ -36,14 +43,12 @@ resources :tasks
   #get "sessions/create"
 
   #get "sessions/destroy"
-  
-  resource :session
 
   resources :jps
 
   resources :jvrs
   resources :cinfos
-  resources :userpages
+  #resources :userpages
 
   resources :blog_posts do resources :comments end
 
@@ -52,9 +57,9 @@ resources :tasks
    resources :comments
   
   resources :naics
-  resource :session 
+  #resource :session 
   resources :topics
-  resources :users, :sent
+  resources :sent
   resources :posts
   resources :forums
   resources :homes
@@ -89,10 +94,6 @@ resources :forums do
 	
 end
 
-
-
-   match 'login' => 'user_sessions#new', :as => :login
-   match 'logout' => 'user_sessions#destroy', :as=> :logout
    match 'inbox' =>'mailbox#index', :as=> :mailInbox  
    match 'mailList'=>'mailbox#mailList',:as=> :mailList
   # match 'company'=>'companies#new',:as=> :company
@@ -155,7 +156,7 @@ end
   # just remember to delete public/index.html.
   #root :to =>
    
-  root :to => "homes#index" 
+ 
   
 
   #root :to => "welcome#index"

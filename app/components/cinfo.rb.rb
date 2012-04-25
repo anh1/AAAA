@@ -1,8 +1,6 @@
 class Cinfos < Netzke::Base
 	
 	
-	
-	
 js_base_class "Ext.form.FormPanel"
 
 js_properties :title => "Company Info",
@@ -81,7 +79,6 @@ config :items=>[
 	
 	]    
 
-
 endpoint :company_info do |params|
 	
 	
@@ -96,13 +93,6 @@ endpoint :company_info do |params|
 	:cofocus=>params[:cfocus],:coifocus=>params[:ifocus],:cokword=>params[:kword])	
 	@tcom_create.save
 	
-	
-   
-	
-	
-	
-	
-	 
 end
 
 
@@ -213,21 +203,6 @@ var cocls = fsbtncls();
 
 }																	
     JS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

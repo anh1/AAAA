@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<title>Example Tabs</title>
+	<title>Sbtn</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	  <%= stylesheet_link_tag :all %> 	 
-	<%= javascript_include_tag :defaults %>
-           	
-          <%= csrf_meta_tag %>	
-	
+	<%= stylesheet_link_tag :all %> 	 
+	<%= javascript_include_tag "jquery-latest","application" %>
+	<%= csrf_meta_tag %>	
 	<%= stylesheet_link_tag "mbasic.css", "tabs.css" %>
-
 </head>
 
 <body>
-	<font size="6" color= #ffffff face="Arial" > <%= @current_user.coname.upcase %> </font>
+	<div id="Top_link">
+		<% if current_user %>
+				<p>Welcome, <%=@current_user.username %>. <%= link_to "Logout", destroy_user_session_path %>  |  <%= link_to 'Edit Profile', edit_user_registration_path %></p>
+			<% else %>
+				<p>Please <%= link_to "register", new_user_registration_path %> or <%= link_to "login", new_user_session_path %></p>
+		<% end %>
+	</div>
+	<%if !@current_user.tcom.nil? %>
+		<div id="head_company"><%= @current_user.tcom.company_name.upcase %></div>
+	<% end %>
 	<div id="header">
 	<ul id="primary">
 		<li><%= link_to "Inbox", :controller => "mailbox", :action => "mailList" %></li>
-		  <li><span>Company</span>
+		  <li><%= link_to "Company", :controller => "tcoms", :action => "index" %>
 			<ul id="secondary">
-				<li><%= link_to "Home", :controller => "homes", :action => "index" %></li>
-				<li><a href="#">About  SBTN</a></li>
-				   <li><%= link_to "Teaming", :controller=>"teamings", :action=>"index"%></li> 
-				<li><%= link_to "Networking", :controller=>"forums", :action => "index" %> </li>
-				<li><a href="#">Resources</a></li>
+					<li><%= link_to "Home", :controller => "homes", :action => "index" %></li>
+					<li><a href="#">About  SBTN</a></li>
+					<li><%= link_to "Teaming", :controller=>"teamings", :action=>"index"%></li> 
+					<li><%= link_to "Networking", :controller=>"forums", :action => "index" %> </li>
+					<li><a href="#">Resources</a></li>
 			</ul>
-		</li>
-		<li><%= link_to "CMS", :controller=>"teamings", :action => "index" %></li>	
-		<li><a href="about.html">Update</a></li>
-		<li><a href="contact.html">Q/C</a></li>
+			</li>
+			<li><%= link_to "CMS", :controller=>"teamings", :action => "index" %></li>	
+			<% if !@current_user.tcom.nil? %>
+				<li><%= link_to "Update", edit_tcom_path(current_user.tcom) %></li>
+			<% end %>
+			<li><a href="contact.html">Q/C</a></li>
 	</ul>
 	</div>
 	<div id="main">
 		<div id="contents">
-			
 			<%= yield %>
-			
 		</div>
-	
-         <div id="footer">
+	  <div id="footer">
+		</div>
+	</div>
+</body>
+</html>
           

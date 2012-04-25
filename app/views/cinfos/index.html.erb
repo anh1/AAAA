@@ -1,1 +1,36 @@
-<%= netzke :cinfos %>
+<%= javascript_include_tag "jquery-latest" %>
+
+<%#= netzke :cinfo %>
+<%= netzke :register %>
+<script type="text/javascript">
+
+$(document).ready(function($) {
+setTimeout(function() {
+ $('#cons1').bind('click',function() {
+ if ($('#cons1').is(':checked')) {
+		$("#company_info").hide();
+		$("#ext-gen86").show();
+		Ext.getCmp('xxx').setHeight(300);
+	}
+	});
+	$('#busi').bind('click',function() {
+	if ($('#busi').is(':checked')) {
+		$("#company_info").show();
+		$("#ext-gen86").hide();
+		Ext.getCmp('xxx').setHeight(1000);
+		Ext.getCmp('company_info').setHeight(700);
+	}
+  });
+	} , 1000); 
+	});	
+	
+	Ext.onReady(function() {
+	//alert(4);
+	  					if (Ext.getCmp('ext-comp-1013').getValue() != Ext.getCmp('ext-comp-1014').getValue()) { 
+							alert(4);
+   Ext.Msg.alert("Your password and confirmation password do not match.");
+  Ext.getCmp('ext-comp-1014').focus();
+}
+	});
+	
+</script>

@@ -1,8 +1,8 @@
 class CreateNaics < ActiveRecord::Migration
   def self.up
     create_table :naics do |t|
-      t.string :sbtnncode
-      t.string :sbtngroup
+      t.string :naics_code
+      t.string :naics_description
       t.boolean :select,   :default => false
       t.timestamps
     end

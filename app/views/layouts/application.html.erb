@@ -1,60 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
- 
-
+<%= javascript_include_tag "jquery-latest" %>
 <%= javascript_include_tag :defaults %>
 <%= csrf_meta_tag %>
 <%= stylesheet_link_tag 'style','menu','application','forum','company'%>
-
-
+<%= netzke_init :ext_theme => 'gray' %>
 <title>Small Business Teaming Network</title>
-
   </head>
  
-   
   <body> 
     <div id="content">
       <ul id="list-nav">
-	    <li><%= link_to "Home", :controller => "homes", :action => "index" %></li> 
-            <li><a href="/about/contact_us.htm">Contact Us</a> </li>
-            <li><%= link_to "Company", :controller => "mailbox", :action => "mailList" %></li> 
-	    <li><%= link_to "Teaming", :controller=>"teamings", :action=>"index"%></li> 
-            <li><%= link_to "Networking", :controller=>"forums", :action => "index" %></li> 
+	    <li><%= link_to "Home", homes_path %></li> 
+            <li><%= link_to "Contact Us", new_contact_path%></li>
+            <%if !@current_user.nil?%>
+            <li><% if((@current_user.role_id)==(Role.find_by_role_type("Consultant").id))%>
+                      <%= link_to "Consultant", homes_path%>
+                   <% else((@current_user.role_id)==(Role.find_by_role_type("Business").id)) %>
+                      <%= link_to "Company", mailList_mailbox_index_path %>
+                   <% end %></li> 
+            <% end %>
+            <li><%= link_to "Teaming", teamings_path%></li> 
+            <li><%= link_to "Networking", forums_path %></li> 
             <li><a>Resources</a></li>
          </ul>
-
 <br/><br/>
   
-    
-    
  <h1>Small Business Teaming Network</h1> 
-
 <br/>
-  
-
-	 
-<% if logged_in? %>
-      <p>Welcome, <%=h @current_user.login %>. <%= link_to "Logout", session_path, :method => "delete" %></p>
+  <% if current_user %>
+      <p>Welcome, <%=@current_user.username %>. <%= link_to "Logout", destroy_user_session_path %>  |  <%= link_to 'Edit Profile', edit_user_registration_path %></p>
     <% else %>
-      <p>Please <%= link_to "register", :controller=>"cinfos", :action=>"index" %> or <%= link_to "login", new_session_path %></p>
-    <% end %>
-    
-
+      <p>Please <%= link_to "register", new_user_registration_path %> or <%= link_to "login", new_user_session_path %></p>
+  <% end %>
 <br/>	 
 <HR align="left" width="100%" size="1" color="CCCC99">
-
-
-
-    
-                
+         <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
-    
-   
-    
-   
-   
   </body>
 </html>

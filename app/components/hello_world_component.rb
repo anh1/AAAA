@@ -6,9 +6,9 @@ def default_config
 
 
 	 
- super.merge(  :id=>"ContactInfo",  title:'Additional Info.',:closeAction=>'hide', :class_name => "Netzke::Basepack::Window", :header=>false, :layout=>'fit', 
-:items => [ {xtype:'tabpanel', :id=>'tabw',:activeTab=>0,  
-items: [    
+ super.merge(  :id=>"ContactInfo",  :title=>'Additional Info.',:closeAction=>'hide', :class_name => "Netzke::Basepack::Window", :header=>false, :layout=>'fit', 
+:items => [ {:xtype=>'tabpanel', :id=>'tabw',:activeTab=>0,  
+:items=> [    
 	    {:class_name => "Netzke::Basepack::GridPanel",:title=>"Naics Code", :model => "Naic", :header => false, :border => true,
 :load_inline_data => false},
 
@@ -21,8 +21,7 @@ items: [
 :load_inline_data => false}
 
 ]}]
-      
-   
+	
 )
 
 end

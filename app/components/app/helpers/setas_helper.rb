@@ -1,2 +1,0 @@
-module SetasHelper
-end

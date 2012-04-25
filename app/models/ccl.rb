@@ -1,4 +1,4 @@
 class Ccl < ActiveRecord::Base
-	belongs_to :company
+	belongs_to :tcoms
 	
 end

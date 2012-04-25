@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout "admin"
   # GET /users
   # GET /users.xml
   def index
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.xml
   def new
-    @user = User.new
+    @user=User.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,18 +41,17 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-    @user = User.find(params[:id])    
-      if @user.save
-        #  render :js => window.location="homes"
-	redirect_to 'http://www.google.com', :status => :moved_permanently 
-
-        #format.xml  { render :xml => @user, :status => :created, :location => @user }
-      end
-     #   format.html { render :action => "new" }
-    #    format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      
+    @user=User.new(params[:id])
     
-   
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
+    end
   end
 
   # PUT /users/1

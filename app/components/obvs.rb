@@ -3,7 +3,7 @@ class Obvs < TeamingGrid
   def configuration
 
     super.merge(
-                { itemId: "obvs",
+                { :itemId=> "obvs",
                   
                   :name => "obvs",
                   :class_name => "Basepack::GridPanel",

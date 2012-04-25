@@ -1,8 +1,8 @@
 #main {
-	border: 1px solid #666;
+	/*border: 2px solid #666;*/
 	clear: both;
-	background: #FAF8CC;
-	padding-top: 2em;
+	background: white;
+	padding-top: 1em;
 }
 
 #contents {
@@ -15,7 +15,7 @@
 #header {
 	position: relative;
 	width: 100%;
-	height: 3em;
+	height: 2em;
 	width: 45em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
 }
 
@@ -53,7 +53,7 @@
 }
 
 #header ul#primary a {
-	background: #FFFFFF;
+	background: #C0C0C0;
 	border: 1px solid #AAA;
 	border-bottom: none;
 }
@@ -106,3 +106,7 @@
 }
 
 #header ul#secondary li:last-child a { border: none; }
+
+#head_company {
+	font-size:3em;
+}

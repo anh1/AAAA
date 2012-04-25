@@ -17,13 +17,13 @@
 
 <%g=topic.user_id %> 
 
-<td><%= User.find(g).login %></font></td>
+<td><%= User.find(g).username %></font></td>
 
 <td><%=topic.posts.count %></font></td>
 
 <td><% if topic.most_recent_post %>
 
-<%= distance_of_time_in_words_to_now topic.most_recent_post.updated_at %> ago by <%= topic.most_recent_post.user.login %>
+<%= distance_of_time_in_words_to_now topic.most_recent_post.updated_at %> ago by <%= topic.most_recent_post.user.username %>
 
 <% else %>no posts<%end%></td>
 

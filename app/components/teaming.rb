@@ -2,7 +2,7 @@
 require File.dirname(__FILE__) + "/teaming_grid"
 
 class Teaming < Netzke::Base
-
+=begin
   js_base_class "Ext.Viewport"
  
 
@@ -32,7 +32,7 @@ class Teaming < Netzke::Base
                             {  
                               :items => [{:name => "info",:class_name => "Basepack::Panel", :title=> "Info" }],              
                               :region => :center, 
-                              autoScroll:true,
+                              :autoScroll:true,
                               :width => 150
                             },      
                             
@@ -793,6 +793,6 @@ this.deletedFromMylist({deleteList:deleteList});
 deletedsaveList=[];
 }
      JS
-
+=end
 end
 

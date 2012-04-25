@@ -1,4 +1,4 @@
-<%= simple_form_for(@cinfo) do |f| %>
+<%= form_for(@cinfo) do |f| %>
   <% if @cinfo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cinfo.errors.count, "error") %> prohibited this cinfo from being saved:</h2>

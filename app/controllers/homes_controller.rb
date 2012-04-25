@@ -1,12 +1,15 @@
 class HomesController < ApplicationController
+    skip_before_filter :authenticate_user!
+    before_filter :register_company
   # GET /homes
   # GET /homes.xml
   def index
-    @homes = Home.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @homes }
+    if !current_user.nil?
+      if (current_user.role.role_type.eql?"Consultant") || (current_user.role.role_type.eql?"Business")
+        render :index
+      elsif current_user.role.role_type.eql?"Admin"
+        redirect_to admin_index_path	
+      end
     end
   end
 

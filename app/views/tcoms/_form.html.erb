@@ -1,8 +1,11 @@
-<%= simple_form_for(@tcom) do |f| %>
+<p class="alert"><%= alert %></p>
+<%= javascript_include_tag "jquery-latest"%>
+<div id="main">
+  <h2 class='x-panel-header x-unselectable'>Company information</h2>
+<%= form_for(@tcom) do |f| %>
   <% if @tcom.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tcom.errors.count, "error") %> prohibited this tcom from being saved:</h2>
-
       <ul>
       <% @tcom.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,11 +13,110 @@
       </ul>
     </div>
   <% end %>
+  
+<div id="main1">
+  <%=f.hidden_field :user_id, :value=>@current_user.id%>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div><br>
+  <div class="field">
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name %>
+  </div><br>
+  <div class="field">
+    <%= f.label :business_email %>
+    <%= f.email_field :business_email %>
+  </div><br>
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.url_field :website %>
+  </div><br>
+	<div class="field">
+    <%= f.label :business_phone %>
+    <%= f.text_field :business_phone %>
+  </div><br>
+  <div class="field">
+    <%= f.label :alternative_phone %>
+    <%= f.text_field :alternative_phone %>
+  </div><br>
+    <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address%>
+  </div><br>
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div><br>
+	<div class="field">
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %>
+  </div><br>
+</div>
+<div id="main2">
+  <div class="field">
+    <%= f.label :duns %>
+    <%= f.text_field :duns %>
+  </div><br>
+  <div class="field">
+    <%= f.label :no_of_employee %>
+    <%= f.number_field :no_of_employee %>
+  </div><br>
+  <div class="field">
+    <%= f.label :business_start_date %>
+    <%=f.date_select :business_start_date,:start_year => 1900,:end_year =>3000,:prompt => :'select',:order => [:day, :month, :year] %>
+  </div><br>
+  <div class="field">
+    <%= f.label :business_type %>
+    <%=f.select :business_type_id , options_for_select(Tcom.business_type_select) %>
+  </div><br>
+  <div class="field">
+    <%= f.label :facility_clearance %>
+    <%= f.select(:facility_clearance, options_for_select(["Yes","No"])) %>
+  </div><br>
+    <div class="field">
+    <%= f.label :contract_experience %>
+    <%= f.select(:contract_experience, options_for_select(["Yes","No"]))  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :product_and_service %>
+    <%= f.text_field :product_and_service %>
+  </div><br>
+	<div class="field">
+    <%= f.label :business_structure %>
+    <%= f.text_field :business_structure %>
+  </div><br>
+  <div class="field">
+    <%= f.label :customer_focus %>
+    <%= f.text_field :customer_focus %>
+  </div><br>
+	<div class="field">
+    <%= f.label :industry_focus %>
+    <%= f.text_field :industry_focus %>
+  </div><br>
+  <div class="field">
+    <%= f.label :keywords %>
+    <%= f.text_field :keywords %>
+  </div><br>
+</div>
+<div id="main3">
+  <div class="field">
+		<%= f.fields_for :company_naics do |builder| %>
+      <%= render 'company_naic_fields', :f => builder %>
+		<% end %>
+		<%= link_to_add_fields "Add Naic", f, :company_naics %>
+  </div><br/>
+  <div class="field">
+		<%= f.fields_for :company_classifications do |builder| %>
+      <%= render 'company_classification_fields', :f => builder %>
+		<% end %>
+		<%= link_to_add_fields "Add Classification", f, :company_classifications%>
+  </div><br/>
+  <div class="field">
+    <%= f.submit %>
+    <%= link_to "Cancel", tcoms_path%>
+  </div><br>
+</div>
+  <% end %>
+</div>
 
-  <div class="inputs">
-  </div>
-
-  <div class="actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>

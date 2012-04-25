@@ -1,29 +1,30 @@
 class CreateTcoms < ActiveRecord::Migration
   def self.up
     create_table :tcoms do |t|
-     t.string :coname
-     t.string :coweb
-     t.string :conaics
-     t.string :cocft    
-     t.boolean :select, :default => false 
-     t.string :cousername 
-     t.string :conum
-     t.string :coanum
-     t.string :coaddress
-     t.string :cocity
-     t.string :cozip
-     t.string :costate
-     t.string :coduns
-     t.string :conemn
-     t.string :cobizstruct
-     t.string :cobsdate
-     t.string :cofclear
-     t.string :cocexp
-     t.string :coprodser
-     t.string :cofocus
-     t.string :coifocus
-     t.string :cokword
-      t.timestamps
+     t.references :user
+     t.string :title
+     t.string :business_email
+     t.string :company_name
+     t.string :website
+     t.integer :business_phone
+     t.integer :alternative_phone
+     t.text :address 
+     t.string :city 
+     t.integer :zipcode
+     t.string :duns
+     t.integer :no_of_employee
+     t.date :business_start_date
+     t.references :business_type
+     t.string :facility_clearance
+     t.string :contract_experience
+     t.string :product_and_service
+     t.string :business_structure
+     t.string :customer_focus
+     t.string :industry_focus
+     t.string :keywords
+     t.string :naics
+     t.string :classifications
+     t.timestamps
     end
   end
 

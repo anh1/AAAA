@@ -1,17 +1,160 @@
-<%= form_for(@user) do |f| %>
+<div id="main">
+<h3 class='x-panel-header'>Registration as</h3>
+<div class="x-panel-bwrap" id="ext-gen60">
+<%= form_for(@user ,{:html=>{:class=>"x-panel-body x-form x-box-layout-ct"}}) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this cinfo from being saved:</h2>
       <ul>
-      <% @user.errors.full_messages.each do |msg| %>
+      <% @cinfo.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+Consultant:  <%= f.radio_button  "role_id", 1%>
+Business:<%= f.radio_button  "role_id", 2%><br/><br/>
+<h2 class='x-panel-header'>User Information</h2>
+  <div class="field">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname, :rows => 3 %>
+  </div><br>
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </div><br>
+    <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div><br>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div><br>
+  <%#= field_set_tag 'Password', :class=>'password_form' do %>
+    <div class="field">
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div><br>
+  <div class="field">
+    <%= f.label :retype_password %>
+    <%= f.text_field :retype_password %>
+  </div><br><%# end %>
+
+  <div id="company_info">
+  <%= fields_for(@company) do |f| %>
+    <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this cinfo from being saved:</h2>
+      <ul>
+      <% @cinfo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <h2 class='x-panel-header'>Company information</h2>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div><br>
+  <div class="field">
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name %>
+  </div><br>
+  <div class="field">
+    <%= f.label :business_email %>
+    <%= f.text_field :business_email %>
+  </div><br>
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div><br>
+    <div class="field">
+    <%= f.label :business_phone %>
+    <%= f.text_field :business_phone %>
+  </div><br>
+  <div class="field">
+    <%= f.label :alternative_phone %>
+    <%= f.text_field :alternative_phone %>
+  </div><br>
+    <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address%>
+  </div><br>
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div><br>
+    <div class="field">
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %>
+  </div><br>
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.select :state, options_for_select(State.all.map(&:state)) %>
+  </div><br>
+    <div class="field">
+    <%= f.label :duns %>
+    <%= f.text_field :duns %>
+  </div><br>
+  <div class="field">
+    <%= f.label :no_of_employee %>
+    <%= f.text_field :no_of_employee %>
+  </div><br>
+    <div class="field">
+    <%= f.label :business_start_date %>
+    <%= f.text_field :business_start_date %>
+  </div><br>
+  <div class="field">
+    <%= f.label :facility_clearance %>
+    <%= f.text_field :facility_clearance %>
+  </div><br>
+    <div class="field">
+    <%= f.label :contract_experience %>
+    <%= f.text_field :contract_experience %>
+  </div><br>
+  <div class="field">
+    <%= f.label :product_and_service %>
+    <%= f.text_field :product_and_service %>
+  </div><br>
+    <div class="field">
+    <%= f.label :business_structure %>
+    <%= f.text_field :business_structure %>
+  </div><br>
+  <div class="field">
+    <%= f.label :customer_focus %>
+    <%= f.text_field :customer_focus %>
+  </div><br>
+    <div class="field">
+    <%= f.label :industry_focus %>
+    <%= f.text_field :industry_focus %>
+  </div><br>
+  <div class="field">
+    <%= f.label :keywords %>
+    <%= f.text_field :keywords %>
+  </div><br>
+  <% end %>
+  </div>
 
   <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit "Save User"%>
+  </div><br>
 <% end %>
+</div>
+</div>
+
+
+<script>
+jQuery.noConflict();
+jQuery("#company_info").hide();
+jQuery("#user_role_id_1").click(function()
+{
+jQuery("#company_info").hide();
+});
+
+jQuery("#user_role_id_2").click(function()
+{
+jQuery("#company_info").show();
+});
+</script>

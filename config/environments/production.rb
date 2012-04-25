@@ -11,6 +11,17 @@ Version::Application.configure do
 
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+	config.action_mailer.smtp_settings = {
+	:address => "smtp.gmail.com" ,
+	:port => 587,
+	:domain => "domain.of.sender.net" ,
+	:authentication => "plain" ,
+	:user_name => "rortest101@gmail.com" ,
+	:password => "rortest1000" ,
+	:enable_starttls_auto => true }
 
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
@@ -29,7 +40,7 @@ Version::Application.configure do
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"

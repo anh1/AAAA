@@ -25,7 +25,14 @@ class TcomsController < ApplicationController
   # GET /tcoms/new.xml
   def new
     @tcom = Tcom.new
-
+    #To generate the textfield for naics at one time
+    1.times do
+      @tcom.company_naics.build
+    end
+    #To generate the textfield for classification at one time
+    1.times do
+      @tcom.company_classifications.build
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @tcom }
@@ -44,6 +51,7 @@ class TcomsController < ApplicationController
 
     respond_to do |format|
       if @tcom.save
+        Notifier.delay.registration_email(@tcom)    #  Deliver the email for successfully created the company details.
         format.html { redirect_to(@tcom, :notice => 'Tcom was successfully created.') }
         format.xml  { render :xml => @tcom, :status => :created, :location => @tcom }
       else

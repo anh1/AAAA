@@ -1,9 +1,7 @@
 class MylistsController < ApplicationController
   layout "cms"
   def index
-   
-   
-    
+
   end
 
   # GET /mylists/1
