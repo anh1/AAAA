@@ -1,0 +1,142 @@
+#main {
+	/*border: 2px solid #666;*/
+	clear: both;
+	background: white;
+	padding-top: 1em;
+}
+
+#contents {
+	padding: 2.5em;
+	background: #FFFFFF;
+	min-height: 500px;
+	margin-top: 25px;
+}
+#mailbox_list {
+	border:1px solid #aaa; 
+	padding:1.7em; 
+	width:13%;
+	float:right;
+}
+#topic_search1 {
+  padding-left:0px;
+  float:left;
+  margin:20px 0 10px 50px;
+}
+#topic_search2 {
+  padding-left:0px;
+  float:left;
+  margin:20px 0 10px 50px;
+}
+#topic_search1 form input[type="submit"] {
+	margin-left: 35px;
+}
+#topic_search2 form input[type="submit"] {
+	margin-left: 35px;
+}
+#topic_select_box {
+  padding-left:0px;
+  float:left;
+  margin:20px 0 10px 50px;
+}
+#header {
+	position: relative;
+	width: 100%;
+	height: 2em;
+	width: 55em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+}
+
+#header ul#primary {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: -1px;
+	width: 55em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+}
+
+#header ul#primary li  {
+	display: inline;
+	list-style: none;
+}
+
+#header ul#primary a,#header ul#primary span,#header ul#primary a.current {
+	width: 9em;
+	display: block;
+	float: left;
+	padding: 4px 2px;
+	margin: 1px 2px 0 0;
+	text-align: center;
+	font-size: 88%;
+	text-decoration: none;
+	color: #333;
+}
+
+#header ul#primary span,#header ul#primary a.current,#header ul#primary a.current:hover {
+	border: 1px solid #666;
+	border-bottom: none;
+	background: #FAF8CC;
+	padding-bottom: 6px;
+	margin-top: 0px;
+}
+
+#header ul#primary a {
+	background: #C0C0C0;
+	border: 1px solid #AAA;
+	border-bottom: none;
+}
+
+#header ul#primary a:hover {
+	margin-top: 0;
+	border-color: #666;
+	background: #FFCCFF;
+	padding-bottom: 5px;
+}
+
+#header ul#secondary {
+	position: absolute;
+	margin-top: 0;
+	padding: 0;
+	bottom: -1.6em;
+	left: 1px;
+	width: 50em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+}
+
+#header ul#secondary li a,#header ul#secondary li span {
+	width: auto;
+	display: block;
+	float: left;
+	padding: 0 10px;
+	margin: 0;
+	text-align: auto;
+	border: none;
+	border-right: 1px dotted #AAA;
+	background: none;
+}
+
+#header ul#secondary li a {
+	color: #06C;
+	text-decoration: underline;
+}
+
+#header ul#secondary li a:hover {
+	color: #333;
+	background: transparent;
+	padding: 0 10px;
+	border: none;
+	border-right: 1px dotted #AAA;
+}
+
+#header ul#secondary li a:active {
+	color: #000;
+	background: transparent;
+}
+
+#header ul#secondary li:last-child a { border: none; }
+
+#head_company {
+	font-size:3em;
+}
+#yield {
+	position:absolute;	
+	margin:1.5em; 
+	width:900px;
+}

@@ -1,0 +1,113 @@
+html { min-width: 600px; }
+
+body, div, td, th, h2, h3, h4 { /* redundant rules for bad browsers  */  
+    /*font-family: verdana,sans-serif;*/
+	font-size:    x-small;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: small;
+	color: #333;
+}  
+.clearhack { display: inline; } /*Clears Box Model Hack in IE5*/
+
+body {
+	background: #5E7C4D;
+	color: #333;
+	padding: 1em 20px 3em 20px;
+	margin: 0;
+}
+
+a { color: #06C; }
+a:hover { color: #333; }
+a:active { color: #000; }
+
+p { line-height: 140%; }
+
+h1,h2 {
+	font-family: trebuchet ms;
+	font-weight: bold;
+	color: #333;
+}
+
+h1 {
+	font-size: 180%;
+	margin: 0;
+}
+
+h1 a { text-decoration: none; color: #333; }
+h1 a:hover { border-bottom: 1px dotted #666; color: #000; }
+
+h2 {
+	font-size: 140%;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #CCC;
+	margin: 0;
+}
+
+p.note {
+	background: #EEE;
+	padding: 4px;
+	font-family: tahoma;
+	font-size: 85%;
+	line-height: 130%;
+	margin-top: 0;
+}
+
+#comment_body {
+	width: 500px;
+	left: 50px;
+	z-index: 2;
+}
+
+#preview {	
+	width: auto;
+}
+
+#blogoutput {	
+	
+	position: absolute;
+	top: 119px;
+	left: 50px;
+	z-index: 3;
+}
+
+
+#blogimage {
+
+float:right;
+width:230px;
+padding:10px;
+background:#F2F2D9;
+height: 500px;
+right: 50px
+}
+
+
+
+#footer  {
+clear:both;
+padding:5px 10px;
+background:#cc9;
+
+}
+
+
+#footer  p{
+clear:both;
+padding:5px 10px;
+background:#ccc;
+}
+
+
+/*styling for blog table*/
+
+table.ex1{table-layout:fixed; width: 600px;}
+
+
+table.ex1 tr {height:1em;}
+
+
+table.ex1 td {overflow: hidden; text-overflow: ellipsis;white-space: nowrap;}
+
+
+

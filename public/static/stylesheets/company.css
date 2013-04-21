@@ -1,0 +1,38 @@
+*{
+margin:0;
+padding:0;
+}
+
+
+
+#naics_container {
+   
+	border-width: 1px;
+	border-style: solid;
+	border-color: FFF;
+	 
+
+	width: 750px;
+	height:150px;
+	overflow:auto;
+	position: relative;
+    left: 0px;	
+	
+	
+
+}
+
+
+
+
+
+
+table.ex2{width:100%;font-size: 85%;}
+
+div.placeholder{padding: 20px;background-color: #F5F6CE; width: 750px;} 
+
+div.sch {background-color:#F5F6CE; width: 790px;}
+
+
+
+div.sch1 {position: absolute; top: 400px; left: 80px;}

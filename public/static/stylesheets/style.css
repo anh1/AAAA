@@ -1,0 +1,74 @@
+body {
+background-color: #4B7399;
+margin: 32px 32px;
+font-family: Helvetica, Arial, sans-serif;
+}
+#content {
+background-color: #fff;
+padding: 20px;
+}
+
+#user_nav {
+	float: left;
+	font-size: 18px;
+	font-weight:600;
+}
+
+hr {size:10px;}
+
+/*style the forum/topic table*/
+
+table.ftable {border:0px 0px 0px 1px; border-collapse:collapse; width:80%;table-layout:fixed;text-align:left;}
+
+table.ftable td {overflow: hidden; white-space: nowrap;font-family:Arial,Helvetica,sans-serif;font-size:14px; padding:5px 0 5px 3px;}
+
+table.ftable th {background-color:gray; border:1px solid #ccc;color:orange;font-size:14px;padding-left:2px;height:25px;}
+
+table.ftable tr.odd { background-color: #F9FFDC; }
+
+
+table.ftable tr.even { background-color: #WHITE;}
+
+body {
+text-align:left;
+margin:30px;
+}
+
+a {
+color:blue;
+cursor:pointer;
+text-decoration: none;
+}
+
+#myvar {
+border:1px solid #ccc;
+padding:10px;
+}
+
+#myvar  .myvartd1, .myvartd2, .myvartd3, .myvartd4 {
+	padding-left:10px;
+	font-size:14px;
+}
+#myvar .myvartd2, .myvartd3 {
+	padding-bottom:14px;
+}
+
+table.inbox_table {border:0px 0px 0px 1px; border-collapse:collapse; width:80%;table-layout:fixed;text-align:left;}
+
+table.inbox_table td {overflow: hidden; white-space: nowrap;font-family:Arial,Helvetica,sans-serif;font-size:14px; padding:5px 0 5px 3px;}
+
+table.inbox_table th {background-color:gray; border:1px solid #ccc;color:orange;font-size:14px;padding-left:2px;height:25px;}
+
+#msgtable .folder_td1, .folder_td2 {
+	width:5%;
+}
+#msgtable .folder_td3 {
+	width: 20%;
+}
+#msgtable .folder_td4, .folder_td5 {
+	width: 20%;
+}		 
+
+table#contact_lists_table {border:0px 0px 0px 1px; border-collapse:collapse; width:35%;table-layout:fixed;text-align:left;}
+table#contact_lists_table  td {overflow: hidden; white-space: nowrap;font-family:Arial,Helvetica,sans-serif;font-size:14px; padding:5px 0 5px 3px;}
+table#contact_lists_table  th {background-color:gray; border:1px solid #ccc;color:orange;font-size:14px;padding-left:2px;height:25px;}

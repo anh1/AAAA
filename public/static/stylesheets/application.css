@@ -1,0 +1,432 @@
+h1 {text-align:left; font-size: 33px;}
+
+#list-nav{text-align:right; color: blue;}
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+}
+
+* {
+margin: 0 auto;
+}
+body {
+background-color: #fff;
+color: #333;
+}
+body, p, ol, ul, td {
+font-family: verdana, arial, helvetica, sans-serif;
+font-size: 13px;
+line-height: 18px;
+}
+pre {
+background-color: #eee;
+padding: 10px;
+font-size: 11px;
+}
+p {
+padding: 5px;
+}
+
+#header {
+font-family:"Myriad Web Pro",Helvetica,Arial,sans-serif;
+letter-spacing: 1px;
+border-bottom: 5px solid gray;
+color:#333333;
+padding: 15px 0;
+height: 35px;
+}
+#header #user_bar {
+float: right;
+font-size: 10px;
+}
+
+#header h1 {
+padding-top: 14px;
+float: left;
+font-size: 30px;
+}
+#header h1 a{
+color: black;
+}
+#header h1 a:hover {
+background-color: white;
+color: black;
+border-bottom: 4px solid #ccc;
+}
+#header p {
+float: right;
+}
+#main h1 {
+font-size: 16px;
+padding: 10px 0;
+margin-bottom: 10px;
+}
+#main table{
+margin: 5px 0;
+}
+#main form{
+text-align: left;
+}
+#main form br{
+display: none;
+float: left;
+}
+#main form label {
+width: 125px;
+display: block;
+text-align: left;
+float: left;
+line-height: 21px;
+vertical-align: center;
+margin-right: 10px;
+}
+#main form label span{
+  color:red;
+}
+#main form label.check_box_label {
+width: auto;
+display: inline;
+text-align: left;
+padding-right: 10px;
+line-height: 21px;
+vertical-align: center;
+background-color: #FFF;
+border: none;
+}
+#main form .field, #main form .actions {
+padding-top: 10px;
+clear: both;
+}
+#main form input[type=text], #main form input[type=password], #main form textarea, #main form input[type=email], #main form input[type=url], #main form input[type=number], main form date{
+float: left;
+font-size: 13px;
+width: 250px;
+padding: 2px;
+border: 2px solid #ccc;
+}
+#main form input[type=checkbox] {
+margin: 4px;
+float: left;
+}
+#main form textarea {
+height: 100px;
+}
+#main form input[type=submit] {
+margin-left: 175px;
+/*float:left;*/
+margin-right: 10px;
+margin-bottom: 10px;
+}
+#main h3 {
+padding-top: 5px;
+height: 20px;
+}
+#main h3 .actions{
+display:none;
+font-weight: normal;
+font-size: 10px;
+}
+#main h3:hover .actions{
+display: inline;
+}
+.fieldWithErrors {
+display:table;
+float:left;
+margin:0;
+width:100px;
+margin-right: 10px;
+}
+#main form .fieldWithErrors label{
+border: 2px solid red;
+margin-right: 0px;
+}
+#main form .fieldWithErrors input, #main form .fieldWithErrors
+width: 250px;
+border: 2px solid red;
+}
+textarea{}
+#error_explanation {
+width: 413px;
+border: 2px solid red;
+padding: 7px;
+padding-bottom: 12px;
+margin-bottom: 20px;
+background-color: #f0f0f0;
+margin: 0;
+}
+#error_explanation h2 {
+text-align: left;
+font-weight: bold;
+padding: 5px 5px 5px 15px;
+font-size: 12px;
+margin: -7px;
+background-color: #c00;
+color: #fff;
+}
+#error_explanation p {
+color: #333;
+margin-bottom: 0;
+padding: 5px;
+margin: 0;
+}
+#error_explanation ul li {
+font-size: 12px;
+padding-left: 10px;
+padding-top: 10px;
+list-style-type: none;
+}
+#msg h2 {
+text-align: right;
+}
+.alert {
+  font-size: 13px;
+  color: green;
+}
+.notice {
+  font-size: 13px;
+  color: green;
+}
+#tcom_business_type_id, #user_state, #tcom_business_structure, #question_action{
+float: left;
+font-size: 13px;
+width: 260px;
+padding: 2px;
+border: 2px solid #ccc;
+}
+#tcom_business_start_date_3i {
+float: left;
+font-size: 13px;
+width: 60px;
+padding: 2px;
+padding-right:2px;
+border: 2px solid #ccc;
+}
+#tcom_business_start_date_2i {
+float: left;
+font-size: 13px;
+width: 120px;
+padding: 2px;
+border: 2px solid #ccc;
+}
+#tcom_business_start_date_1i {
+float: left;
+font-size: 13px;
+width: 80px;
+padding: 2px;
+border: 2px solid #ccc;
+}
+#tcom_facility_clearance, #tcom_contract_experience {
+float: left;
+font-size: 13px;
+width: 70px;
+padding: 2px;
+border: 2px solid #ccc;
+}
+#main1 {
+float:left;
+}
+#main2 {
+float:right;
+padding-right:350px;
+}
+#main3 {
+padding-top:15px;
+clear:both;
+padding-right:0px;
+width:500px;
+}
+.add_fields {
+padding-top:15px;
+float:left;
+padding-right:740px;
+width:500px;
+}
+#Top_link {
+  float:right;
+}
+#Top_link a {
+  color:white;
+}
+#forum .td1 {
+  width:250px;
+}
+#forum .td2 {
+  width:500px;
+}
+#forum .td3, .td4 {
+  width:75px;
+}
+.add_fields { padding-right: 0;}
+#search_table {
+  padding-left:20px;
+}
+#posted_by {
+  color:#800517;
+}
+#topic {
+  padding: 2px 0 20px 5px;
+  border: 2px solid #ccc;
+}
+#header_forum_content h1 {
+  text-decoration:underline;
+}
+
+#left{
+font-size: 15px;
+width: 250px;
+padding: 2px;
+border: 2px solid #ccc;
+}
+
+#company_logo{
+padding: 2px;
+padding-right:940px;
+float: right;
+}
+
+#left1{
+font-size: 15px;
+width: 250px;
+padding-right: 750px;
+}
+
+#left2{
+font-size: 15px;
+padding-right: 750px;
+width: 250px;
+}
+
+#left3{
+padding-left: 750px;
+}
+
+#left4{
+
+float: right;
+}
+=======
+.pagination_bottom {
+  padding-left: 1030px;
+}
+#read_diff {
+  color:blue;
+}
+#topic_search {
+  padding-left:20px;
+}
+#user
+{
+  float: left;
+  padding-left: 10px;
+  font-size:15px;
+  border-style:solid;
+  border-width:0px;
+  width :300px;
+}
+
+#user1
+{
+  float: left;
+  padding-left: 10%;
+  font-size:15px;
+  border-style:solid;
+  width: 350px;
+  border-width:0px;
+}
+
+#user2
+{
+  padding-left: 70%;
+  font-size:15px;
+  border-style:solid;
+  border-width:0px;
+  /*float:right;*/
+}
+#company_video {
+  padding-top:20px;
+}
+#company_description {
+  font-size:15px;
+  color: green;
+}
+#logo_company {
+  padding-left: 10px;
+}
+#company_audio {
+  padding-top: 20px;
+}
+
+#option
+{
+  font-size:15px;
+  position:relative;
+  top:510px;
+}
+#back
+{
+  position:relative;
+  left:0px;
+  top:200px;
+}
+#profile_photo1 {
+  padding-left :10px;
+  float :left;
+}
+#consultant_description {
+  padding-left :15%;
+  width: 500px;
+  float :left;
+  color:green;
+  font-size:15px;
+}
+#home_page_video{
+  float: right;
+  margin:0 0 0 20px;
+}
+#home_page_description {
+  line-height:150%;
+  text-align:justify;
+}

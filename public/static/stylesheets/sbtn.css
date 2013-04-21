@@ -1,0 +1,156 @@
+body {
+	background: gray;
+	color: #333;
+	font-family:verdana,arial,helvetica,sans-serif;
+	font-size:13px;
+	line-height:1.5;
+}
+
+a { color: #06C; }
+	a:hover { color: #333; }
+	a:active { color: #000; }
+
+/*layout*/
+.main{
+	width:1200px;
+	margin:10px auto;
+	}
+
+.header{}
+
+.toolbar{
+	margin:0 0 15px;
+	}
+	.toolbar__l{
+		float:left;
+	}
+	.company-name{
+		font-size:3em;
+		line-height:1;
+		font-weight:normal;
+	}
+	.toolbar__r{
+		float:right;
+	}
+	.auth{
+		padding-top:15px;
+	}
+		.auth__link{
+			color:#fff;
+		}
+	
+/* nav */
+.nav{
+	position:relative;
+	}
+	.primary-nav{
+		margin:0 0 5px;
+	}
+	.nav-item{
+		display:inline-block;
+		*display:inline;
+		*zoom:1;
+		
+		font-size:12px;
+		line-height:1.5;
+	}
+	.primary-nav .nav-item-url{
+		display:block;
+		width:9em;
+		margin:0 2px 0 0;
+		padding:5px;
+		border: solid #aaa;
+		border-width:1px 1px 0;
+		text-align:center;
+		background:#C0C0C0;
+		color:#333;
+		text-decoration:none;
+		letter-spacing:1px;
+	}
+	.primary-nav a.nav-item-url:hover{
+		background-color:#FFCCFF;
+		border-color:#666;
+	}
+	.primary-nav .current,
+	.primary-nav a.current:hover{
+		background:#FAF8CC;
+		border-color:#666;
+	}
+	.secondary-nav{}
+	
+		.secondary-nav .nav-item{
+			
+		}
+		.secondary-nav .nav-item-url{
+			padding:0 10px;
+			border-right: 1px dotted #AAA;
+		}
+	
+.content{
+	background:#fff;
+	}
+	.content-wrap{
+		min-height:580px;
+		padding:10px 10px 10px 180px;
+	}
+	.content .aside{
+		display:inline;
+		float:left;
+		width:160px;
+		height:200px;
+		margin:0 0 0 -170px;
+	}
+	.content-area{}
+	
+	.mail-options{
+		padding:20px;
+		border:1px solid #aaa;
+	}
+	.bullet{
+		list-style-type:disc;
+	}
+	
+.footer{
+	background:#CCCC99;
+	padding:5px 10px;
+}
+
+/* Mailbox search */
+.topic-search{}
+
+	.topic-search-pref{
+		margin:0 0 20px;
+	}
+	.topic-selector{
+		float:left;
+	}
+	.topic-search-wrap{
+		margin-left:100px;
+		}
+		.search-field{
+			width:250px;
+			border:2px solid #ccc;
+			font-size:13px;
+			font-family:Arial, Helvetica, sans-serif;
+		}
+	
+	.results{
+		width:100%;
+		border-collapse:separate;
+		}
+		.results thead th{
+			padding:5px;
+			font-size:14px;
+			background:grey;
+			color:orange;
+			text-align:left;
+		}
+		.results tbody td{
+			padding:5px;
+		}
+		.results .company{
+			text-align:left;
+		}
+		.company-col th{
+			text-align:left;
+		}
