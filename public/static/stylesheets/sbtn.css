@@ -91,16 +91,18 @@ a { color: #06C; }
 	}
 	.content-wrap{
 		min-height:580px;
-		padding:10px 10px 10px 180px;
+		padding:10px;
+	}
+	.content-area{
+		float:left;
+		width:1000px;
 	}
 	.content .aside{
 		display:inline;
-		float:left;
+		float:right;
 		width:160px;
 		height:200px;
-		margin:0 0 0 -170px;
 	}
-	.content-area{}
 	
 	.mail-options{
 		padding:20px;
